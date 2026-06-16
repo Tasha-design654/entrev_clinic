@@ -21,11 +21,13 @@ body {
     border-color: #008f80;
 }
 
-/* --- Hero Background Layout --- */
+
 .hero {
     background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(43, 45, 66, 0.8)), 
                 url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-    height: 75vh;
+    minheight: 85vh;
+    display: flex;
+    align-item: center;
 }
 
 /* Cap width of the search element on wider screens */
