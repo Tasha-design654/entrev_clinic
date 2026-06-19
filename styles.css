@@ -1,4 +1,10 @@
-/* --- Global Styles & Reset --- */
+/* ==========================================================================
+   1. GLOBAL STYLES & CORE VARIABLES (Shared Across All Pages)
+   ========================================================================== */
+:root {
+    --secondary-teal: #00a896;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +24,41 @@ body {
     margin: 0 auto;
 }
 
-/* --- Navigation Bar --- */
+.fs-7 {
+    font-size: 0.85rem;
+}
+
+/* Custom Teal Button style since Bootstrap doesn't have teal built-in */
+.btn-teal {
+    background-color: var(--secondary-teal);
+    border-color: var(--secondary-teal);
+}
+.btn-teal:hover {
+    background-color: #008f80;
+    border-color: #008f80;
+}
+
+
+/* ==========================================================================
+   2. HOME PAGE HERO & LAYOUTS 
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(43, 45, 66, 0.8)), 
+                url('image/Entrev hospital.jpg') no-repeat center center/cover;
+    min-height: 85vh; /* Fixed typo: changed minheight to min-height */
+    display: flex;
+    align-items: center;
+}
+
+/* Cap width of the search element on wider screens */
+.search-group {
+    max-width: 250px;
+}
+
+
+/* ==========================================================================
+   3. NAVIGATION BAR (Bootstrap Utility & Grid Compatible)
+   ========================================================================== */
 .navbar {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -34,6 +74,7 @@ body {
     align-items: center;
 }
 
+/* Standard custom Logo Styling */
 .logo {
     font-size: 24px;
     font-weight: 700;
@@ -44,32 +85,60 @@ body {
     color: #0284c7; /* Clinical Cyan/Blue */
 }
 
+/* Overrides Bootstrap's default brand link color to match your palette */
+.navbar-brand.text-primary {
+    color: #0f172a !important; /* Base dark color for "Entrev" */
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+/* Specific highlight rule for brand anchor tags */
+.navbar-brand span {
+    color: #0284c7; 
+}
+
+/* Styles the Font Awesome heart-pulse icon color explicitly */
+.navbar-brand .fa-heart-pulse {
+    color: #0284c7; /* Clinical Cyan/Blue for the icon */
+}
+
+/* Navigation Links across the navbar header */
 .navbar nav a {
-    text-decoration: none;
-    color: #475569;
+    text-decoration: none !important;
+    color: #475569 !important;
     margin-left: 25px;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.navbar nav a:hover, .navbar nav a.active {
-    color: #0284c7;
+/* Hover and Active Link States */
+.navbar nav a:hover, 
+.navbar nav a.active {
+    color: #0284c7 !important; /* Clinical Cyan/Blue on hover */
+    text-decoration: none !important;
 }
 
+/* Request Appointment Nav Button styling tweaks */
 .navbar nav .btn-nav {
     background-color: #0284c7;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
     transition: background 0.3s;
 }
 
 .navbar nav .btn-nav:hover {
-    background-color: #0369a1;
-    color: #ffffff;
+    background-color: #0369a1; /* Slightly darker blue for hover depth */
+    color: #ffffff !important;
 }
 
-/* --- Hero Section --- */
+
+/* ==========================================================================
+   4. SERVICES & MEDICAL PROFESSIONALS HERO SECTION
+   ========================================================================== */
 .services-hero {
     background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
     color: #ffffff;
@@ -89,6 +158,7 @@ body {
     margin: 0 auto 30px auto;
 }
 
+/* Services Search Input Group */
 .search-bar {
     display: flex;
     justify-content: center;
@@ -120,7 +190,10 @@ body {
     background-color: #0369a1;
 }
 
-/* --- Services Main Section --- */
+
+/* ==========================================================================
+   5. SPECIALTIES & DIRECTORY CARD LAYOUTS
+   ========================================================================== */
 .services-section {
     padding: 80px 0;
 }
@@ -189,7 +262,10 @@ body {
     color: #0369a1;
 }
 
-/* --- Call To Action (CTA) Banner --- */
+
+/* ==========================================================================
+   6. EMERGENCY/ALERT CALL TO ACTION (CTA) BANNER 
+   ========================================================================== */
 .cta-banner {
     background-color: #f1f5f9;
     border-top: 1px solid #e2e8f0;
@@ -236,7 +312,10 @@ body {
     color: white;
 }
 
-/* --- Footer --- */
+
+/* ==========================================================================
+   7. GLOBAL FOOTER STRIP
+   ========================================================================== */
 footer {
     background-color: #0f172a;
     color: #94a3b8;
