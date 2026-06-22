@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrev Hospital Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .search-page {
+            padding: 60px 0 120px;
+        }
+        .search-panel {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            margin-bottom: 50px;
+        }
+        .search-panel h1 {
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: var(--dark-slate);
+        }
+        .search-panel p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+        .search-panel form {
+            display: grid;
+            gap: 18px;
+        }
+        .search-panel input,
+        .search-panel select {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            color: #334155;
+            background: #f8fafc;
+        }
+        .search-panel .search-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .search-panel button {
+            width: fit-content;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary-blue);
+            color: #ffffff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .search-panel button:hover {
+            background: #0369a1;
+        }
+        .results-summary {
+            margin-bottom: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .results-summary h2 {
+            font-size: 24px;
+            color: var(--dark-slate);
+        }
+        .result-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+            border-top: 4px solid var(--secondary-teal);
+            margin-bottom: 24px;
+        }
+        .result-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .result-header h3 {
+            font-size: 22px;
+            margin-bottom: 4px;
+            color: #0f172a;
+        }
+        .result-header span {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .result-card p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .result-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        .result-meta div {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+        }
+        .result-meta strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--dark-slate);
+        }
+        .search-footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #475569;
+        }
+        .search-footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        @media (max-width: 860px) {
+            .search-panel .search-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand text-primary logo">Entrev <span>Hospital</span></a>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#services">Services</a>
+                <a href="#search" class="active">Search</a>
+                <a href="#contact" class="btn-nav">Book Now</a>
+            </nav>
+        </div>
+    </header>
 
+    <main class="search-page">
+        <div class="container">
+            <section class="search-panel" id="search">
+                <h1>Find the right care at Entrev Hospital</h1>
+                <p>Search doctors, specialties, departments, and services across our hospital network to get fast support and expert guidance.</p>
+                <form>
+                    <div class="search-grid">
+                        <input type="text" placeholder="Search doctors, services, departments" aria-label="Search query">
+                        <select aria-label="Location">
+                            <option selected>All locations</option>
+                            <option>Downtown Campus</option>
+                            <option>North Health Center</option>
+                            <option>East Emergency Unit</option>
+                        </select>
+                    </div>
+                    <div class="search-grid">
+                        <select aria-label="Specialty">
+                            <option selected>All specialties</option>
+                            <option>Cardiology</option>
+                            <option>Neurology</option>
+                            <option>Pediatrics</option>
+                            <option>Radiology</option>
+                        </select>
+                        <button type="submit">Search</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="results-summary">
+                <h2>Search results</h2>
+                <span>Showing 12 matches for <strong>“cardiology”</strong></span>
+            </section>
+
+            <article class="result-card">
+                <div class="result-header">
+                    <div>
+                        <h3>Dr. Maya Santos</h3>
+                        <span>Chief Cardiologist</span>
+                    </div>
+                    <span>Downtown Campus</span>
+                </div>
+                <p>Leading the cardiology team with advanced diagnostic care, interventional treatments, and personalized heart wellness plans.</p>
+                <div class="result-meta">
+                    <div>
+                        <strong>Specialty</strong>
+                        Cardiology
+                    </div>
+                    <div>
+                        <strong>Availability</strong>
+                        Mon – Fri
+                    </div>
+                    <div>
+                        <strong>Experience</strong>
+                        14 years
+                    </div>
+                </div>
+            </article>
+
+            <article class="result-card">
+                <div class="result-header">
+                    <div>
+                        <h3>Heart Health Clinic</h3>
+                        <span>Comprehensive cardiology services</span>
+                    </div>
+                    <span>North Health Center</span>
+                </div>
+                <p>Offering cardiac screening, imaging, stress testing, and preventive care designed for every stage of heart health.</p>
+                <div class="result-meta">
+                    <div>
+                        <strong>Services</strong>
+                        Cardiac imaging, rehab, consultations
+                    </div>
+                    <div>
+                        <strong>Contact</strong>
+                        (555) 014-2201
+                    </div>
+                    <div>
+                        <strong>Access</strong>
+                        Walk-ins accepted
+                    </div>
+                </div>
+            </article>
+
+            <article class="result-card">
+                <div class="result-header">
+                    <div>
+                        <h3>Cardiac Diagnostics Team</h3>
+                        <span>Advanced monitoring and testing</span>
+                    </div>
+                    <span>East Emergency Unit</span>
+                </div>
+                <p>Rapid response diagnostics for stress tests, EKG, echo imaging, and urgent care coordination for heart patients.</p>
+                <div class="result-meta">
+                    <div>
+                        <strong>Open hours</strong>
+                        24/7
+                    </div>
+                    <div>
+                        <strong>Special tools</strong>
+                        Echo, EKG, Holter monitor
+                    </div>
+                    <div>
+                        <strong>Nearest</strong>
+                        Emergency entrance B
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="search-footer" id="contact">
+        <div class="container">
+            <p>Need urgent help? <a href="#">Contact Entrev Hospital support</a> or call <strong>(555) 123-4567</strong>.</p>
+        </div>
+    </footer>
+</body>
+</html>
