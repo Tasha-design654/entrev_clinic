@@ -1,0 +1,798 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & CORE VARIABLES (Shared Across All Pages)
+   ========================================================================== */
+:root {
+    --secondary-teal: #00a896;
+    --primary-blue: #0284c7;
+    --dark-slate: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding stays inside element widths globally */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fs-7 {
+    font-size: 0.85rem;
+}
+
+/* Custom Teal Button style since Bootstrap doesn't have teal built-in */
+.btn-teal {
+    background-color: var(--secondary-teal);
+    border-color: var(--secondary-teal);
+}
+.btn-teal:hover {
+    background-color: #008f80;
+    border-color: #008f80;
+}
+
+
+/* ==========================================================================
+   2. HOME PAGE HERO & LAYOUTS 
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(43, 45, 66, 0.8)),
+                url('images/Entrev hospital.jpg') no-repeat center center/cover;
+    min-height: 85vh; 
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Stylized default anchor buttons inside hero sections */
+.hero .button {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.hero .button:hover {
+    background-color: #0369a1;
+}
+
+/* Cap width of the search element on wider screens */
+.search-group {
+    max-width: 250px;
+}
+
+
+/* ==========================================================================
+   3. NAVIGATION BAR (Bootstrap Utility & Grid Compatible)
+   ========================================================================== */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Standard custom Logo Styling */
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-slate);
+}
+
+.logo span {
+    color: var(--primary-blue); 
+}
+
+/* Overrides Bootstrap's default brand link color to match your palette */
+.navbar-brand.text-primary {
+    color: var(--dark-slate) !important; 
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+/* Specific highlight rule for brand anchor tags */
+.navbar-brand span {
+    color: var(--primary-blue); 
+}
+
+/* Styles the Font Awesome heart-pulse icon color explicitly */
+.navbar-brand .fa-heart-pulse {
+    color: var(--primary-blue); 
+}
+
+/* Navigation Links across the navbar header */
+.navbar nav a {
+    text-decoration: none !important;
+    color: #475569 !important;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Hover and Active Link States */
+.navbar nav a:hover, 
+.navbar nav a.active {
+    color: var(--primary-blue) !important; 
+    text-decoration: none !important;
+}
+
+/* Request Appointment Nav Button styling tweaks */
+.navbar nav .btn-nav {
+    background-color: var(--primary-blue);
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.navbar nav .btn-nav:hover {
+    background-color: #0369a1; 
+    color: #ffffff !important;
+}
+
+
+/* ==========================================================================
+   4. SERVICES & MEDICAL PROFESSIONALS HERO SECTION
+   ========================================================================== */
+.services-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.services-hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.services-hero p {
+    font-size: 18px;
+    color: #e2e8f0;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+ Hero Section Layout Base */
+.services-hero {
+    background-color: #0a2540; /* Dark deep blue like Cleveland Clinic */
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.services-hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+/* Flexbox wrapper to keep input field and button beautifully inline */
+.search-bar {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    overflow: hidden; /* Ensures borders wrap nicely */
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #0076d6; /* Prominent clinical button color */
+    color: white;
+    border: none;
+    padding: 0 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-bar button:hover {
+    background-color: #00569d;
+}
+     
+
+/* ==========================================================================
+   5. SPECIALTIES & DIRECTORY CARD LAYOUTS
+   ========================================================================== */
+.services-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--dark-slate);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border-top: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-top: 4px solid var(--primary-blue);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 20px;
+    min-height: 70px; 
+}
+
+.service-grid .service-link {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.service-grid .service-link:hover {
+    color: #0369a1;
+}
+    
+
+
+/* ==========================================================================
+   6. EMERGENCY/ALERT CALL TO ACTION (CTA) BANNER 
+   ========================================================================== */
+.cta-banner {
+    background-color: #f1f5f9;
+    border-top: 1px solid #e2e8f0;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    color: var(--dark-slate);
+    margin-bottom: 10px;
+}
+
+.cta-banner p {
+    color: #475569;
+    margin-bottom: 25px;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #dc2626; /* Crimson Red for Emergency urgency */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #b91c1c;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+
+/* ==========================================================================
+   7. CONTACT PAGE LAYOUT & FORM ELEMENTS
+   ========================================================================== */
+.contact-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Added .section-box to share the same clean container styling */
+.contact-card, 
+.form-container,
+.section-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    margin-bottom: 30px;
+}
+
+/* Centering the appointment section nicely on the page */
+.section-box {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.contact-card h2, 
+.form-container h2,
+.section-box h2 {
+    color: var(--dark-slate);
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.contact-card p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #475569;
+}
+
+.form-container label,
+.section-box label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1e293b;
+    margin-top: 10px;
+}
+
+/* Expanded to include select dropdowns and inputs inside .section-box */
+.form-container input, 
+.form-container textarea,
+.section-box input,
+.section-box select,
+.section-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
+    color: #334155;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-container input:focus, 
+.form-container textarea:focus,
+.section-box input:focus,
+.section-box select:focus,
+.section-box textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* Targets submit buttons for both forms */
+.form-container button[type="submit"],
+.section-box button[type="submit"] {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.form-container button[type="submit"]:hover,
+.section-box button[type="submit"]:hover {
+    background-color: #0369a1;
+}
+
+/* ==========================================================================
+   8. BILLING & INSURANCE PAGE COMPONENTS (billing.html layout)
+   ========================================================================== */
+body > section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+body > section h2 {
+    color: var(--dark-slate);
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 12px;
+}
+
+body > section ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+body > section ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    font-size: 16px;
+}
+
+body > section ul li::before {
+    content: "✓ ";
+    color: var(--secondary-teal);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* FAQ layout styling adjustments */
+body > section p b {
+    display: block;
+    color: #1e293b;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+
+/* ==========================================================================
+   9. MEDICAL PROFESSIONALS & TABLES (professionals.html layout)
+   ========================================================================== */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+main h2 {
+    color: var(--dark-slate);
+    margin-bottom: 15px;
+}
+
+/* Redesigned Search Row for Doctor lookup */
+main input[type="text"] {
+    width: 75%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px 0 0 6px;
+    outline: none;
+    font-size: 15px;
+}
+
+main input[type="text"]:focus {
+    border-color: var(--primary-blue);
+}
+
+main input[type="text"] + button {
+    width: 25%;
+    padding: 12px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: 1px solid var(--primary-blue);
+    border-radius: 0 6px 6px 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+main input[type="text"] + button:hover {
+    background-color: #0369a1;
+}
+
+/* Clean up native <hr> divider lines */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 20px 0;
+}
+
+/* Featured Doctors Layout Structure */
+article {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 0;
+}
+
+article img {
+    border-radius: 10px; /* Converts clean circular avatars into clean square profiles */
+    object-fit: cover;
+    width: 200px;
+    height:200px;
+    border: 3px solid #f1f5f9;
+}
+
+article h3 {
+    color: var(--dark-slate);
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+article p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+article button {
+    margin-left: auto; /* Pushes booking button perfectly to the far right */
+    background-color: var(--secondary-teal);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+article button:hover {
+    background-color: #008f80;
+}
+
+/* Clean, Modernized Directory Table */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes ancient double border spacing */
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+table th {
+    background-color: var(--dark-slate);
+    color: #ffffff;
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: 600;
+}
+
+table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #475569;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8fafc; /* Subtle Zebra Striping for simple readability */
+}
+
+/* Native fallback context for medical service sub-forms */
+main form label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+main form input, 
+main form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+main form button[type="submit"] {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   10. SEARCH PAGE
+   ========================================================================== */
+ .search-page {
+            padding: 60px 0 120px;
+        }
+        .search-panel {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            margin-bottom: 50px;
+        }
+        .search-panel h1 {
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: var(--dark-slate);
+        }
+        .search-panel p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+        .search-panel form {
+            display: grid;
+            gap: 18px;
+        }
+        .search-panel input,
+        .search-panel select {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            color: #334155;
+            background: #f8fafc;
+        }
+        .search-panel .search-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .search-panel button {
+            width: fit-content;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary-blue);
+            color: #ffffff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .search-panel button:hover {
+            background: #0369a1;
+        }
+        .results-summary {
+            margin-bottom: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .results-summary h2 {
+            font-size: 24px;
+            color: var(--dark-slate);
+        }
+        .result-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+            border-top: 4px solid var(--secondary-teal);
+            margin-bottom: 24px;
+        }
+        .result-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .result-header h3 {
+            font-size: 22px;
+            margin-bottom: 4px;
+            color: #0f172a;
+        }
+        .result-header span {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .result-card p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .result-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        .result-meta div {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+        }
+        .result-meta strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--dark-slate);
+        }
+        .search-footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #475569;
+        }
+        .search-footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        @media (max-width: 860px) {
+            .search-panel .search-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+/* ==========================================================================
+   11. GLOBAL FOOTER STRIP
+   ========================================================================== */
+footer {
+    background-color: var(--dark-slate);
+    color: #94a3b8;
+    padding: 30px 0;
+    text-align: center;
+}
